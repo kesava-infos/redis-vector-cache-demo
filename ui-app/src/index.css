@@ -1,0 +1,113 @@
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+  /* Color Palette */
+  --bg-dark: #090c10;
+  --bg-surface: #111622;
+  --bg-surface-hover: #192030;
+  --bg-card: rgba(19, 26, 38, 0.75);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-glow: rgba(255, 68, 56, 0.3);
+
+  /* Primary Redis Brand Colors */
+  --primary-red: #ff4438;
+  --primary-red-glow: rgba(255, 68, 56, 0.25);
+  --primary-red-hover: #e03227;
+  --primary-red-dark: #8c1e17;
+
+  /* Status Colors */
+  --hit-green: #10b981;
+  --hit-green-bg: rgba(16, 185, 129, 0.12);
+  --hit-green-border: rgba(16, 185, 129, 0.3);
+
+  --miss-purple: #a855f7;
+  --miss-purple-bg: rgba(168, 85, 247, 0.12);
+  --miss-purple-border: rgba(168, 85, 247, 0.3);
+
+  /* Text Colors */
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  /* Shadows & Glassmorphism */
+  --glass-bg: rgba(15, 21, 32, 0.85);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(255, 68, 56, 0.15);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Button & Tooltip Utilities */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  outline: none;
+}
