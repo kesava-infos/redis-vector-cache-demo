@@ -1,0 +1,6 @@
+# docker run -d -p 8080:80 nginx
+
+FROM nginx:latest
+expose 80
+CMD ["nginx", "-g", "daemon off"]
+
